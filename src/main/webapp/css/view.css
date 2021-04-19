@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+#articleForm {
+	width: 500px;
+	height: 530px;
+	margin: auto;
+}
+
+#fileForm {
+	text-align: right;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+h2 {
+	text-align: center;
+}
+
+#basicInfoArea {
+	text-align: center;
+	background: lightblue;
+	padding: 10px;
+}
+
+#articleContentArea {
+	background: aliceblue;
+	height: 350px;
+	overflow: auto;
+	padding: 20px
+}
+
+#commandList {
+	margin: auto;
+	width: 500px;
+	text-align: center;
+}

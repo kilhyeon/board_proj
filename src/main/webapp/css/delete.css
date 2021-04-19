@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#passForm {
+	width: 400px;
+	margin: auto;
+	border: 1px solid steelblue;
+}
+
+ul{
+	list-style: none;
+	padding: 5px;
+	margin: 10px;
+}
+
+#pass{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#btn{
+	text-align: center;
+}

@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 
-@WebFilter(urlPatterns = { "/*" }, initParams = { @WebInitParam(name = "encoding", value = "UTF-8") })
+@WebFilter(urlPatterns = { "*.do" }, initParams = { @WebInitParam(name = "encoding", value = "UTF-8") })
 public class CharacterEncodingFilter implements Filter {
 	private String encoding;
 
@@ -30,8 +30,8 @@ public class CharacterEncodingFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		request.setCharacterEncoding(encoding);
-		response.setCharacterEncoding(encoding);
-//		response.setContentType("text/html;charset=UTF-8");
+//		response.setCharacterEncoding(encoding);
+		response.setContentType("text/html;charset=UTF-8");
 
 		chain.doFilter(request, response);
 	}

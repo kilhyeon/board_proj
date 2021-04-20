@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import board_proj.action.Action;
 import board_proj.action.BoardDeatilAction;
 import board_proj.action.BoardDeleteProAction;
+import board_proj.action.BoardFileDownAction;
 import board_proj.action.BoardListAction;
+import board_proj.action.BoardModifyFormAction;
+import board_proj.action.BoardModifyProAction;
 import board_proj.action.BoardReplyFormAction;
 import board_proj.action.BoardWriteProAction;
-import board_proj.action.FileDownloadAction;
 import board_proj.dto.ActionForward;
 
 @WebServlet("*.do")
@@ -98,7 +100,22 @@ public class BoardFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (command.equals("/fileDownload.do")) {
-			action = new FileDownloadAction();
+			action = new BoardFileDownAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/boardModifyForm.do")) {
+			action = new BoardModifyFormAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/boardModifyPro.do")) {
+//			boardModifyPro.do?BOARD_NUM=56&BOARD_NAME=123&BOARD_PASS=123&BOARD_SUBJECT=123&BOARD_CONTENT=123
+			action = new BoardModifyProAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

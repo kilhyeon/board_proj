@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="<%=request.getContextPath() %>/css/view.css">
 </head>
 <body>
+board_re_ref : ${article.board_re_ref}<br>
+board_re_lev : ${article.board_re_lev}<br>
+board_re_seq : ${article.board_re_seq}<br>
+
 	<!-- 게시판 수정 -->
 	<section id="articleForm">
 		<h2>글 내용 상세보기</h2>

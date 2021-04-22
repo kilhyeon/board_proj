@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>MVC 게시판</title>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/css/list.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/list.css">
 <%-- <%=request.getContextPath()%> --%>
 </head>
 <body>
@@ -20,7 +20,7 @@
 			<a href="boardWriteForm.do">게시판 글쓰기</a>
 		</h4>
 		<table border="1">
-			<tr id = "tr1">
+			<tr id="tr1">
 				<td>번호</td>
 				<td>제목</td>
 				<td>작성자</td>
@@ -30,8 +30,12 @@
 			<c:forEach var="board" items="${articleList }">
 				<tr>
 					<td>${board.board_num}</td>
-					<td>
-					<a href="boardDetail.do?board_num=${board.board_num}&page=${pageInfo.page}">${board.board_subject}</a>
+					<td id="tdSubject">
+						<c:if test="${board.board_re_lev ne 0}">
+							<c:forEach var="i" begin="4" end="${board.board_re_lev * 4}">&nbsp;</c:forEach>
+							&#10551;
+						</c:if>
+						<a href="boardDetail.do?board_num=${board.board_num}&page=${pageInfo.page}">${board.board_subject}</a>
 					</td>
 					<td>${board.board_name}</td>
 					<td>${board.board_date}</td>

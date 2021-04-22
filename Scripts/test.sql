@@ -49,7 +49,16 @@ delete from board where BOARD_NUM = 26;
 
 select 1 from board where BOARD_NUM = 25 and BOARD_PASS = '1234';
 
+-- 글 답변
+select * from board where BOARD_RE_REF = 20;
+select * from board where BOARD_RE_REF = 65;
+select * from board where BOARD_NUM = 20;
 
+-- 글에 대한 답변
+update board set BOARD_RE_SEQ  = BOARD_RE_SEQ +1 where BOARD_RE_REF = 23 and BOARD_RE_SEQ > 0;
+
+insert into board (BOARD_NUM, BOARD_NAME, BOARD_PASS, BOARD_SUBJECT, BOARD_CONTENT, BOARD_FILE, BOARD_RE_REF, BOARD_RE_LEV, BOARD_RE_SEQ)
+values(26, '홍길동?111', '1111', '6시', 'gggg', '', 23, 1, 1);
 
 
 

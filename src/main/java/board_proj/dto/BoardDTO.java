@@ -48,6 +48,8 @@ public class BoardDTO {
 		this.board_date = board_date;
 	}
 
+	
+	
 	public int getBoard_num() {
 		return board_num;
 	}

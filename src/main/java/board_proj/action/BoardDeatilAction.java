@@ -10,7 +10,7 @@ import board_proj.service.BoardDetailService;
 public class BoardDeatilAction implements Action {
 
 	@Override
-	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) /* throws Exception */ {
 		// boardDetail.do?board_num=44&page=1
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		int page = Integer.parseInt(request.getParameter("page"));

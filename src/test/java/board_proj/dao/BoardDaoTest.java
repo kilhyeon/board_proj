@@ -81,12 +81,23 @@ public class BoardDaoTest {
 //		System.out.println(newBoard);
 		int res = dao.insertArticle(article);
 		Assert.assertEquals(1, res);
+		System.out.println("res >> " + res);
 
 	}
 
 	@Test
-	public void testInsertReplyArticle() {
-		fail("Not yet implemented");
+	public void test10InsertReplyArticle() {
+		System.out.println("test10InsertReplyArticle()");
+		BoardDTO replyArticle = new BoardDTO("노네", "1111", "제목4", "없음4", "");
+		replyArticle.setBoard_re_ref(65);
+		
+		//답변에 대한 답변
+		replyArticle.setBoard_re_lev(1);
+		replyArticle.setBoard_re_seq(1);
+		
+		int res = dao.insertReplyArticle(replyArticle);
+		Assert.assertEquals(1, res);
+		System.out.println("res >> " + res);
 	}
 
 	@Test
@@ -120,8 +131,8 @@ public class BoardDaoTest {
 	@Test
 	public void test07IsArticleBoardWriter() {
 		System.out.println("test07IsArticleBoardWriter()");
-		int borad_num = 22;
-		boolean res = dao.isArticleBoardWriter(borad_num, "bbb");
+		int board_num = 58;
+		boolean res = dao.isArticleBoardWriter(board_num, "bbb");
 		Assert.assertEquals(true, res);
 		System.out.println("res >> " + res);
 	}
